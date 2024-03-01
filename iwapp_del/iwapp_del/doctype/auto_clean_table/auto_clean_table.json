@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-03-01 13:05:06.172447",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "doctype_name",
+  "delete_files_after_days",
+  "delete_files_before_date",
+  "schedular"
+ ],
+ "fields": [
+  {
+   "fieldname": "doctype_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "DocType Name",
+   "options": "DocType",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.schedular ==1;",
+   "fieldname": "delete_files_after_days",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Delete Files After (Days)",
+   "mandatory_depends_on": "eval:doc.schedular ==1;"
+  },
+  {
+   "depends_on": "eval:doc.schedular ==0;",
+   "fieldname": "delete_files_before_date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Delete Files Before (Date)",
+   "mandatory_depends_on": "eval:doc.schedular ==0;",
+   "read_only_depends_on": "eval:doc.schedular ==1;"
+  },
+  {
+   "default": "0",
+   "fieldname": "schedular",
+   "fieldtype": "Check",
+   "label": "Schedular",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-03-01 13:05:06.172447",
+ "modified_by": "Administrator",
+ "module": "iWapp-Del",
+ "name": "Auto Clean Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

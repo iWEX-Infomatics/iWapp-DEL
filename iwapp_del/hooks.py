@@ -127,13 +127,13 @@ app_license = "MIT"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
 # 	"all": [
 # 		"iwapp_del.tasks.all"
 # 	],
-# 	"daily": [
-# 		"iwapp_del.tasks.daily"
-# 	],
+    "daily": [
+		"iwapp_del.iwapp_del.doctype.auto_clean.auto_clean.days_scheduler"
+	],
 # 	"hourly": [
 # 		"iwapp_del.tasks.hourly"
 # 	],
@@ -143,7 +143,7 @@ app_license = "MIT"
 # 	"monthly": [
 # 		"iwapp_del.tasks.monthly"
 # 	],
-# }
+}
 
 # Testing
 # -------
